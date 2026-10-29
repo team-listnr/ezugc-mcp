@@ -1,0 +1,43 @@
+{
+  "name": "@ezugc/mcp",
+  "version": "0.6.0",
+  "type": "module",
+  "description": "EzUGC Model Context Protocol server \u2014 generate brand videos with any model from Claude Code or any MCP client.",
+  "license": "MIT",
+  "author": "EzUGC",
+  "homepage": "https://www.ezugc.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-listnr/ezugc-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ezugc",
+    "video",
+    "ai",
+    "sora",
+    "ugc"
+  ],
+  "bin": {
+    "ezugc-mcp": "src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "skills"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.25.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
