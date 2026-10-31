@@ -5,6 +5,11 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 
 import { callApi, hasApiKey, DASHBOARD_KEY_URL } from "./client.js";
+import { createRequire } from "node:module";
+
+// Report the published version, never a copy of it: a hardcoded string drifted
+// (0.6.0 shipped saying 0.5.0, and 0.5.1 was published from code main never had).
+const { version: PACKAGE_VERSION } = createRequire(import.meta.url)("../package.json");
 
 const MAX_SYNC_WAIT_MS = 290_000; // under the API's 5-minute sync ceiling
 
@@ -101,7 +106,7 @@ const clampWait = (wait) => (wait === false ? null : MAX_SYNC_WAIT_MS);
 
 const server = new McpServer({
   name: "ezugc",
-  version: "0.5.0",
+  version: PACKAGE_VERSION,
 });
 
 /**
